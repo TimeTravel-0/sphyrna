@@ -1,0 +1,4 @@
+raw / 16bit / mono < 256k for custom
+
+DEFAULT.HUB contains 6 strings of "Sample Bankbanknk" - markers
+"0B 53 61 6D 70 6C 65 20 42 61 6E 6B 62 61 6E 6B 6E 6B 00 00 00 00 00 00 00 00 00 00 00 00 00"

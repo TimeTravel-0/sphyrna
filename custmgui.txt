@@ -1,0 +1,33 @@
+gustmgui.dll is raw 16 bit intel PCM at 44.1kHz mono, containing all the sounds one after another
+
+Instruments included:
+
+HardBD
+909BD
+SubBD
+JungleBD
+BlipBD
+Hardcore909BD1
+Hardcore909BD2
+606Snare
+JungleSnare
+HardSnare
+808Snare
+Ac.Snare1
+Ac.Snare2
+909Snare
+909Clap
+SnapClap
+Rimshot
+909OpenHH
+909ClosedHH
+909PedalHH
+Ac.OpenHH
+Ac.ClosedHH
+909Crash
+[HipHop]
+[FunkyDrummer]
+[Giz1]
+[Giz2]
+[Jungle1]
+[Jungle2]
