@@ -7,10 +7,27 @@
 <body>
     here we go
 
+    <button onclick="ButtonTogglePlay()">Play</button>
+
+
+    <button onclick="ButtonTotalMinus()">&lt;</button><button onclick="ButtonTotalPlus()">&gt;</button><input id="TextTotal"></input>
+
     <button onclick="playSounds()">playSounds()</button>
     
-    <input type="range" orient="vertical" />
     
+    <button onclick="loadTrack('../acid.js')";GUIupdate();>loadTrack();GUIupdate();</button>
+    
+    
+    <button onclick="playbackTick()">tick()</button>
+    
+    
+    <button onclick="run()">run()</button>
+    <button onclick="stop()">stop()</button>
+    
+    <input type="range" orient="vertical">
+    
+    
+    <input type="range" oninput="setSpeed(this.value)" onchange="setSpeed(this.value)" min="50" max="250" value="125">
 
 </body>
 </html>

@@ -1,3 +1,90 @@
+// global vars (ugly...)
+
+
+var sound_buffer = Array();
+var context;
+var track;
+var playback_position=0;
+var playback_state=false;
+var timer = setInterval(playbackTick,100);
+
+
+function GUIupdate(){
+  TextTotalShow();
+}
+
+
+function ButtonTogglePlay(){
+  togglePlay();
+}
+
+function ButtonTotalMinus(){
+  totalSet(totalGet()-1);
+  TextTotalShow();
+}
+
+function ButtonTotalPlus(){
+  totalSet(totalGet()+1);
+  TextTotalShow();
+}
+
+function TextTotalShow()
+{
+  document.getElementById("TextTotal").value=totalGet();
+}
+
+function totalGet(){
+  return track[0][0];
+}
+
+function totalSet(value){
+  track[0][0] = value;
+}
+
+
+function setSpeed(bpm){
+  ticktime = 1000*60 / (bpm*4);
+  clearInterval(timer)
+  timer = setInterval(playbackTick,ticktime);
+}
+
+function togglePlay(){
+  playback_state = ! playback_state;
+}
+
+function run(){
+  playback_state = true;
+}
+
+
+function stop(){
+  playback_state = false;
+}
+
+
+function playbackTick(){
+  if(playback_state==false){
+    return;
+  }
+  //log("playbackTick")
+  
+  for(var c=0;c<6;c++){
+    state = track[2][c][playback_position];
+    soundn = track[1][c][1];
+    //log("state="+state+" soundno="+soundn)
+    playSound(soundn, state);
+  }
+  
+  
+  playback_position+=1;    
+  if(playback_position >= track[0][0]*16){
+    playback_position-=track[0][0]*16;
+  }
+}
+
+
+
+
 // from http://stackoverflow.com/questions/1766795/javascript-write-console-debug-output-to-browser
 function log(msg){
   if (window.console && console.log) {
@@ -8,7 +95,7 @@ function log(msg){
 }
 
 // from http://www.html5rocks.com/en/tutorials/webaudio/intro/
-var context;
+
 window.addEventListener('load', init, false);
 function init() {
   try {
@@ -32,7 +119,6 @@ function loadSounds() {
 }
 
 
-var sound_buffer = Array();
 
 function onError() {}
 
@@ -69,4 +155,27 @@ function playSound(slot, volume) {
   gainNode.connect(context.destination);  // Connect the gain node to the destination.
   source.start(0);                           // play the source now
                                              // note: on older systems, may have to use deprecated noteOn(time);
+}
+
+
+
+function loadTrack(url){
+  var xmlhttp = new XMLHttpRequest();
+  log("loadTrack("+url+")");
+
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        loadTrackCallback(myArr);
+    }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+
+function loadTrackCallback(arr){
+  log("loadTrack()");
+  log(arr);
+  track = arr;
+  playback_position=0;
 }
