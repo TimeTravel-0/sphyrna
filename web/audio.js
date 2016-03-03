@@ -7,7 +7,7 @@ var track;
 var playback_position=0;
 var playback_state=false;
 var timer = setInterval(playbackTick,100);
-
+var channel_states = [];
 
 function GUIupdate(){
   TextTotalShow();
@@ -46,6 +46,11 @@ function setSpeed(bpm){
   ticktime = 1000*60 / (bpm*4);
   clearInterval(timer)
   timer = setInterval(playbackTick,ticktime);
+  track[0][1] = bpm;
+}
+
+function getSpeed(){
+  return track[0][1];
 }
 
 function togglePlay(){
@@ -72,7 +77,17 @@ function playbackTick(){
     state = track[2][c][playback_position];
     soundn = track[1][c][1];
     //log("state="+state+" soundno="+soundn)
-    playSound(soundn, state);
+    stretchto = 0
+    // speed adjustment for built-in sounds
+    if(soundn>=24 && soundn<29){
+        log(getSpeed()+" "+4*60/getSpeed())
+//        stretchto = 1/60*(getSpeed()*4); //   ticktime = 1000*60 / (bpm*4);
+stretchto=4*60/getSpeed();
+    }
+    // speed adjustments for .hub needs to be done (and included in the files - somehow...)
+    
+    
+    playSound(soundn, state,1,stretchto);
   }
   
   
@@ -144,11 +159,32 @@ function playSounds(){
   }
 }
 
-function playSound(slot, volume) {
+function playSound(slot, volume, speed, stretchto) {
+
   volume = typeof volume !== 'undefined' ? volume : 100; // http://stackoverflow.com/questions/894860/set-a-default-parameter-value-for-a-javascript-function#894877
+  speed = typeof speed !== 'undefined' ? speed : 1.0; 
+  stretchto = typeof stretchto !== 'undefined' ? stretchto : 0;
+
+
+  if(volume == 0){
+    return;
+  }
+
+  if(typeof channel_states[slot] !== 'undefined'){
+    channel_states[slot].stop();
+  }
   
   var source = context.createBufferSource(); // creates a sound source
+  channel_states[slot] = source;
   source.buffer = (sound_buffer[slot]);                    // tell the source which sound to play
+  
+  
+  if(stretchto>0){
+    speed = 1/(stretchto / source.buffer.duration);
+    log("stretch to "+stretchto + "  length "+source.buffer.duration+" factor "+speed)
+  }
+  
+  source.playbackRate.value = speed
   var gainNode = context.createGain(); // Create a gain node.
   gainNode.gain.value = volume/100.0;
   source.connect(gainNode); // Connect the source to the gain node.
@@ -178,4 +214,5 @@ function loadTrackCallback(arr){
   log(arr);
   track = arr;
   playback_position=0;
+  setSpeed(track[0][1]);
 }

@@ -94,6 +94,7 @@ def readhh(infile):
 
 
     # add them to x_config
+    x_config.append(125) # BPM / tempo
 
     tval = ""
     for i in range(0,len(rawdata)):
@@ -121,6 +122,6 @@ if __name__ == "__main__":
     elif len(sys.argv)==3:
         main(sys.argv[1],sys.argv[2])
     else:
-        print "this.py infile.hh"
+        print "this.py infile.hh (outfile.json)"
 
 
