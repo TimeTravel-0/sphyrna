@@ -2,7 +2,7 @@
 
 Hammerhead Rythm Station was developed by Bram Bos in 1997 as Freeware for Win95. The original website and the last known website of the creator is dead, the mail adress does not work.
 
-This is an effort to document the used file format / provide extraction tools. Maybe a HTML5 audio rewrite will come into life. As I respect the original work and do not want to use the name without permission, this is named Sphyrna (biological name of hammerhead sharks).
+This is an effort to document the used file format / provide extraction tools. Maybe a HTML5 audio rewrite will come into life. As I respect the original work and do not want to use the name without permission, this is named Sphyrna (biological name of hammerhead sharks, excluding the one shown in the original software - Eusphyra blochii).
 
 The original readme included the following statement:
 
