@@ -7,3 +7,13 @@ input[type=range][orient=vertical]
     height: 175px;
     padding: 0 5px;
 }
+
+body
+{
+    background-color:darkgrey;
+}
+
+input,button
+{
+    border-radius:5px;
+}

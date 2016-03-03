@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head><title>Sphyrna</title>
+<head><title>Sphyrna - Groovy</title>
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="audio.js"></script>
 </head>
 <body>
-    here we go
+    <pre>
+    Groovy
     
-    <button onclick="loadTrack('../json/ACID.json')";GUIupdate();>ACID</button>
-    <button onclick="loadTrack('../json/CHEMICAL.json')";GUIupdate();>CHEMICAL</button>
-    <button onclick="loadTrack('../json/COOLHOP.json')";GUIupdate();>COOLHOP</button>
-    <button onclick="loadTrack('../json/HARDCORE.json')";GUIupdate();>HARDCORE</button> 
-    <button onclick="loadTrack('../json/HIPHOP.json')";GUIupdate();>HIPHOP</button>
-    <button onclick="loadTrack('../json/JUMPDUDE.json')";GUIupdate();>JUMPDUDE</button>
-    <button onclick="loadTrack('../json/JUNGLE.json')";GUIupdate();>JUNGLE</button>
-    <button onclick="loadTrack('../json/LAY_BACK.json')";GUIupdate();>LAY_BACK</button> 
-    <button onclick="loadTrack('../json/LAY_BLACK.json')";GUIupdate();>LAY_BLACK</button> 
-    <button onclick="loadTrack('../json/MELLOW.json')";GUIupdate();>MELLOW</button> 
-    <button onclick="loadTrack('../json/SHARKY.json')";GUIupdate();>SHARKY</button>
+    <button onclick="loadTrack('../json/ACID.json')";GUIupdate();>ACID</button><button onclick="loadTrack('../json/CHEMICAL.json')";GUIupdate();>CHEMICAL</button><button onclick="loadTrack('../json/COOLHOP.json')";GUIupdate();>COOLHOP</button><button onclick="loadTrack('../json/HARDCORE.json')";GUIupdate();>HARDCORE</button><button onclick="loadTrack('../json/HIPHOP.json')";GUIupdate();>HIPHOP</button><button onclick="loadTrack('../json/JUMPDUDE.json')";GUIupdate();>JUMPDUDE</button><button onclick="loadTrack('../json/JUNGLE.json')";GUIupdate();>JUNGLE</button><button onclick="loadTrack('../json/LAY_BACK.json')";GUIupdate();>LAY_BACK</button><button onclick="loadTrack('../json/LAY_BLACK.json')";GUIupdate();>LAY_BLACK</button><button onclick="loadTrack('../json/MELLOW.json')";GUIupdate();>MELLOW</button><button onclick="loadTrack('../json/SHARKY.json')";GUIupdate();>SHARKY</button>
+        
     
+<input type="range" orient="vertical">
     
-
 
     <button onclick="ButtonTogglePlay()">Play</button>
 
 
     <button onclick="ButtonTotalMinus()">&lt;</button><button onclick="ButtonTotalPlus()">&gt;</button><input id="TextTotal"></input>
+    <button onclick="ButtonCurrentMinus()">&lt;</button><button onclick="ButtonCurrentPlus()">&gt;</button><input id="TextCurrent"></input>    
 
-    <button onclick="playSounds()">playSounds()</button>
-    
-    
-  
-    
-    
-    <button onclick="playbackTick()">tick()</button>
-    
-    
-    <button onclick="run()">run()</button>
-    <button onclick="stop()">stop()</button>
-    
-    <input type="range" orient="vertical">
-    
-    
-    <input type="range" oninput="setSpeed(this.value)" onchange="setSpeed(this.value)" min="50" max="250" value="125">
 
+    
+    
+    <input type="range" oninput="setSpeed(this.value)" onchange="setSpeed(this.value)" min="50" max="250" value="125"><input type="range" oninput="" onchange="" min="0" max="100" value="0">
+    
+    <input type="range" oninput="" onchange="" min="0" max="100" value="0"><input type="range" oninput="" onchange="" min="0" max="100" value="0">
+    
+    <button onclick="ButtonBit(1)">1</button><button onclick="ButtonBit(2)">2</button><button onclick="ButtonBit(3)">3</button><button onclick="ButtonBit(4)">4</button><button onclick="ButtonBit(5)">5</button><button onclick="ButtonBit(6)">6</button><button onclick="ButtonBit(7)">7</button><button onclick="ButtonBit(8)">8</button><button onclick="ButtonBit(9)">9</button><button onclick="ButtonBit(10)">10</button><button onclick="ButtonBit(11)">11</button><button onclick="ButtonBit(12)">12</button><button onclick="ButtonBit(13)">13</button><button onclick="ButtonBit(14)">14</button><button onclick="ButtonBit(15)">15</button><button onclick="ButtonBit(16)">16</button>
+
+
+    <button onclick="ButtonChannel(1)">Channel 1</button><button onclick="ButtonChannel(2)">Channel 2</button><button onclick="ButtonChannel(3)">Channel 3</button><button onclick="ButtonChannel(4)">Channel 4</button><button onclick="ButtonChannel(5)">Channel 5</button><button onclick="ButtonChannel(6)">Channel 6</button>
+    <input type="range" orient="vertical"><input type="range" orient="vertical"> <input type="range" orient="vertical"><input type="range" orient="vertical"><input type="range" orient="vertical"><input type="range" orient="vertical">    
+</pre>
 </body>
 </html>
