@@ -31,3 +31,38 @@ Ac.ClosedHH
 [Giz2]
 [Jungle1]
 [Jungle2]
+
+
+WINEDEBUG=+FILE wine HAMMER.exe &>dump.txt
+then search for CustmGui.DLL, check the file handle (0x80 in this case) and check for the single read operations...
+
+trace:file:CreateFileW returning 0x80
+trace:file:ReadFile 0x80 0x43c674 25844 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x457180 17014 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x471c8c 109324 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x48c798 20214 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x4a72a4 16928 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x4c1db0 31188 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x4dc8bc 35622 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x4f73c8 16008 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x511ed4 16706 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x52c9e0 33510 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x5474ec 7878 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x561ff8 21688 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x57cb04 17280 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x597610 13772 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x5b211c 20112 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x5ccc28 19552 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x5e7734 8482 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x602240 41428 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x61cd4c 3310 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x637858 9720 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x652364 69088 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x66ce70 6012 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x68797c 81344 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x6a2488 82834 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x6bcf94 92400 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x6d7aa0 66046 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x6f25ac 66046 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x70d0b8 62598 0x32fb24 (nil)
+trace:file:ReadFile 0x80 0x727bc4 62598 0x32fb24 (nil)
