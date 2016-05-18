@@ -9,13 +9,31 @@ var playback_state=false;
 var timer = setInterval(playbackTick,100);
 var channel_states = [];
 
+function ButtonToState(item,state){
+    
+    if(state){
+        state="sel"
+    }else{
+        state="des"
+    }
+    
+    c = item.getAttribute("class")
+    
+    c = c.substring(0,3)+"_"+state
+    
+    item.setAttribute("class",c)
+    
+}
+
 function GUIupdate(){
   TextTotalShow();
 }
 
 
-function ButtonTogglePlay(){
+function ButtonTogglePlay(e){
   togglePlay();
+  ButtonToState(e.target,playback_state)
+  
 }
 
 function ButtonTotalMinus(){
@@ -167,6 +185,13 @@ function playSound(slot, volume, speed, stretchto) {
 
 
   if(volume == 0){
+    if(typeof channel_states[slot] !== 'undefined'){
+      if(stretchto>0){
+        speed = 1/(stretchto / channel_states[slot].buffer.duration);
+        channel_states[slot].playbackRate.value = speed;
+      }
+    }
+
     return;
   }
 

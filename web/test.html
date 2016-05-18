@@ -6,19 +6,22 @@
 </head>
 <body>
     <pre>
-    Groovy
     
-    <button onclick="loadTrack('../json/ACID.json')";GUIupdate();>ACID</button><button onclick="loadTrack('../json/CHEMICAL.json')";GUIupdate();>CHEMICAL</button><button onclick="loadTrack('../json/COOLHOP.json')";GUIupdate();>COOLHOP</button><button onclick="loadTrack('../json/HARDCORE.json')";GUIupdate();>HARDCORE</button><button onclick="loadTrack('../json/HIPHOP.json')";GUIupdate();>HIPHOP</button><button onclick="loadTrack('../json/JUMPDUDE.json')";GUIupdate();>JUMPDUDE</button><button onclick="loadTrack('../json/JUNGLE.json')";GUIupdate();>JUNGLE</button><button onclick="loadTrack('../json/LAY_BACK.json')";GUIupdate();>LAY_BACK</button><button onclick="loadTrack('../json/LAY_BLACK.json')";GUIupdate();>LAY_BLACK</button><button onclick="loadTrack('../json/MELLOW.json')";GUIupdate();>MELLOW</button><button onclick="loadTrack('../json/SHARKY.json')";GUIupdate();>SHARKY</button>
-        
     
-<input type="range" orient="vertical">
+    
+    <input type="range" orient="vertical" style="position:absolute;left:584px;top:32px;width:32px;height:140px">
     
 
-    <button onclick="ButtonTogglePlay()">Play</button>
+    <button onclick="ButtonTogglePlay(event)" class="ply" style="position:absolute; left:48px;top:70px;">Play</button>
 
 
-    <button onclick="ButtonTotalMinus()">&lt;</button><button onclick="ButtonTotalPlus()">&gt;</button><input id="TextTotal"></input>
-    <button onclick="ButtonCurrentMinus()">&lt;</button><button onclick="ButtonCurrentPlus()">&gt;</button><input id="TextCurrent"></input>    
+    <button onclick="ButtonTotalMinus()" class="smb" style="position:absolute;left:48px;top:112px">&lt;</button>
+    <button onclick="ButtonTotalPlus()" class="smb" style="position:absolute;left:82px;top:112px">&gt;</button>
+    <input id="TextTotal" class="smt" style="position:absolute;left:124px;top:112px"></input>
+    
+    <button onclick="ButtonCurrentMinus()" class="smb" style="position:absolute;left:48px;top:132px">&lt;</button>
+    <button onclick="ButtonCurrentPlus()" class="smb" style="position:absolute;left:82px;top:132px">&gt;</button>
+    <input id="TextCurrent" class="smt" style="position:absolute;left:124px;top:132px"></input>    
 
 
     
@@ -27,11 +30,39 @@
     
     <input type="range" oninput="" onchange="" min="0" max="100" value="0"><input type="range" oninput="" onchange="" min="0" max="100" value="0">
     
-    <button onclick="ButtonBit(1)">1</button><button onclick="ButtonBit(2)">2</button><button onclick="ButtonBit(3)">3</button><button onclick="ButtonBit(4)">4</button><button onclick="ButtonBit(5)">5</button><button onclick="ButtonBit(6)">6</button><button onclick="ButtonBit(7)">7</button><button onclick="ButtonBit(8)">8</button><button onclick="ButtonBit(9)">9</button><button onclick="ButtonBit(10)">10</button><button onclick="ButtonBit(11)">11</button><button onclick="ButtonBit(12)">12</button><button onclick="ButtonBit(13)">13</button><button onclick="ButtonBit(14)">14</button><button onclick="ButtonBit(15)">15</button><button onclick="ButtonBit(16)">16</button>
+    <button onclick="ButtonBit(1)" class="yel" style="position:absolute;left:009px;top:190px;">1</button>
+    <button onclick="ButtonBit(2)" class="blu" style="position:absolute;left:047px;top:190px;">2</button>
+    <button onclick="ButtonBit(3)" class="blu" style="position:absolute;left:085px;top:190px;">3</button>
+    <button onclick="ButtonBit(4)" class="blu" style="position:absolute;left:123px;top:190px;">4</button>
+    
+    <button onclick="ButtonBit(5)" class="yel" style="position:absolute;left:166px;top:190px;">5</button>
+    <button onclick="ButtonBit(6)" class="blu" style="position:absolute;left:204px;top:190px;">6</button>
+    <button onclick="ButtonBit(7)" class="blu" style="position:absolute;left:242px;top:190px;">7</button>
+    <button onclick="ButtonBit(8)" class="blu" style="position:absolute;left:280px;top:190px;">8</button>
+    
+    <button onclick="ButtonBit(9)" class="yel" style="position:absolute;left:321px;top:190px;">9</button>
+    <button onclick="ButtonBit(10)" class="blu" style="position:absolute;left:359px;top:190px;">10</button>
+    <button onclick="ButtonBit(11)" class="blu" style="position:absolute;left:397px;top:190px;">11</button>
+    <button onclick="ButtonBit(12)" class="blu" style="position:absolute;left:435px;top:190px;">12</button>
+    
+    <button onclick="ButtonBit(13)" class="yel" style="position:absolute;left:476px;top:190px;">13</button>
+    <button onclick="ButtonBit(14)" class="blu" style="position:absolute;left:513px;top:190px;">14</button>
+    <button onclick="ButtonBit(15)" class="blu" style="position:absolute;left:550px;top:190px;">15</button>
+    <button onclick="ButtonBit(16)" class="blu" style="position:absolute;left:587px;top:190px;">16</button>
 
 
-    <button onclick="ButtonChannel(1)">Channel 1</button><button onclick="ButtonChannel(2)">Channel 2</button><button onclick="ButtonChannel(3)">Channel 3</button><button onclick="ButtonChannel(4)">Channel 4</button><button onclick="ButtonChannel(5)">Channel 5</button><button onclick="ButtonChannel(6)">Channel 6</button>
+    <button onclick="ButtonChannel(event,1)" class="chn" style="position:absolute; left:005px;top:248px;">Channel 1</button>
+    <button onclick="ButtonChannel(event,2)" class="chn" style="position:absolute; left:109px;top:248px;">Channel 2</button>
+    <button onclick="ButtonChannel(event,3)" class="chn" style="position:absolute; left:213px;top:248px;">Channel 3</button>
+    <button onclick="ButtonChannel(event,4)" class="chn" style="position:absolute; left:317px;top:248px;">Channel 4</button>
+    <button onclick="ButtonChannel(event,5)" class="chn" style="position:absolute; left:421px;top:248px;">Channel 5</button>
+    <button onclick="ButtonChannel(event,6)" class="chn" style="position:absolute; left:525px;top:248px;">Channel 6</button>
     <input type="range" orient="vertical"><input type="range" orient="vertical"> <input type="range" orient="vertical"><input type="range" orient="vertical"><input type="range" orient="vertical"><input type="range" orient="vertical">    
 </pre>
+
+
+    <button onclick="loadTrack('../json/ACID.json')";GUIupdate();>ACID</button><button onclick="loadTrack('../json/CHEMICAL.json')";GUIupdate();>CHEMICAL</button><button onclick="loadTrack('../json/COOLHOP.json')";GUIupdate();>COOLHOP</button><button onclick="loadTrack('../json/HARDCORE.json')";GUIupdate();>HARDCORE</button><button onclick="loadTrack('../json/HIPHOP.json')";GUIupdate();>HIPHOP</button><button onclick="loadTrack('../json/JUMPDUDE.json')";GUIupdate();>JUMPDUDE</button><button onclick="loadTrack('../json/JUNGLE.json')";GUIupdate();>JUNGLE</button><button onclick="loadTrack('../json/LAY_BACK.json')";GUIupdate();>LAY_BACK</button><button onclick="loadTrack('../json/LAY_BLACK.json')";GUIupdate();>LAY_BLACK</button><button onclick="loadTrack('../json/MELLOW.json')";GUIupdate();>MELLOW</button><button onclick="loadTrack('../json/SHARKY.json')";GUIupdate();>SHARKY</button>
+    
+
 </body>
 </html>
